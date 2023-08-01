@@ -1,16 +1,20 @@
 /* Mobile View */
 
 .welcome {
-    width: 100%;
+    margin: 15vh auto 0 auto;
+    width: 90%;
+    height: 100vh;
 }
 
 .welcome-text > h1 {
     font-size: 42px;
+    margin-bottom: 5vh;
 }
 
 .welcome-text > p {
-    font-size: 18px;
-    line-height: calc(18px * 1.5);
+    font-size: 14px;
+    line-height: calc(14px * 1.5);
+    width: 80%;
 }
 
 .welcome-hero  {
@@ -25,10 +29,18 @@
     width: 100%;
 }
 
+p > .cta {
+    margin-top: 5vh;
+} 
+
 .cta {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: start;
+}
+
+.cta > * {
+    margin-right: 40px;
 }
 
 .mobile {
@@ -39,10 +51,6 @@
 
 
 @media screen and (min-width: 481px) {
-
-    main {
-      width: 90vw;
-    }
 
     .welcome-text {
         width: 80%;
@@ -85,11 +93,18 @@
   @media screen and (min-width: 769px) {
 
     .welcome {
+        width: 80%;
+        margin: 0;
         display: flex;
         flex-direction: row;
         height: 100vh;
         justify-content: center;
         align-items: center;
+        margin-left: 25%;
+    }
+
+    .welcome-text > h1 {
+        margin-bottom: 3vh;
     }
 
     .welcome-text {
@@ -117,6 +132,10 @@
   
   @media screen and (min-width: 1025px) {
 
+    .welcome {
+        margin-left: 10%;
+    }
+
     .welcome-text > p {
         margin-top: 40px;
         font-size: 18px;
@@ -132,5 +151,17 @@
   }
   
   @media screen and (min-width: 1201px) {
+
+    .welcome {
+        margin-left: 5%;
+    }
+
+    .welcome-text {
+        width: 100%;
+    }
+
+    .welcome-hero {
+        width: 60%;
+    }
     
   }

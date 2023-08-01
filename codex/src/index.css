@@ -35,9 +35,8 @@ body {
 }
 
 main {
-  width: 90vw;
+  width: 100vw;
   margin: auto;
-  display: flex;
 }
 
 h1 {
@@ -105,6 +104,16 @@ button:focus-visible {
 }
 
 @media screen and (min-width: 769px) {
+
+  body {
+    flex-direction: row;
+  }
+
+  main {
+    overflow: hidden;
+  }
+
+
   
 }
 
@@ -112,6 +121,7 @@ button:focus-visible {
 
   main {
     width: 80vw;
+    margin-left: 18%;
   }
 
 }

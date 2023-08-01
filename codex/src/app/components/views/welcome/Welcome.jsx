@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import Hero from '../../../assets/images/Codex.png'
-import '../../../assets/styles/hero.css'
+import Hero from '../../../../assets/images/Codex.png'
+import './welcome.css'
 
 const Welcome = () => {
 
@@ -16,7 +16,7 @@ const Welcome = () => {
     return(
         <>
         <section className="welcome" id="welcome">
-            <div className="welcome-text" style={{ textAlign: currentWidth < 469 ? 'center' : 'left' }}>
+            <div className="welcome-text">
                 <h1>Studentencodex Online</h1>
                 <p>
                     Welkom bij studentencodex online.
