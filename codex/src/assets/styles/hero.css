@@ -1,0 +1,136 @@
+/* Mobile View */
+
+.welcome {
+    width: 100%;
+}
+
+.welcome-text > h1 {
+    font-size: 42px;
+}
+
+.welcome-text > p {
+    font-size: 18px;
+    line-height: calc(18px * 1.5);
+}
+
+.welcome-hero  {
+    width: 100%;
+    margin-top: 15vh;
+}
+
+.hero-image {
+    width: 100%;
+}
+.hero-image > img {
+    width: 100%;
+}
+
+.cta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.mobile {
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+
+
+@media screen and (min-width: 481px) {
+
+    main {
+      width: 90vw;
+    }
+
+    .welcome-text {
+        width: 80%;
+        height: 80vh;
+        margin: 5vh 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .welcome-text > h1 {
+        margin: 0;
+        height: 5vh;
+    }
+
+    .welcome-text > p {
+        font-size: 24px;
+        line-height: calc(24px * 1.5);
+    }
+
+    p {
+        width: 100%;
+    }
+
+    .cta {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        margin-top: 5vh;
+    }
+
+    .cta > button {
+        margin-right: 20px;
+        font-size: 24px;
+
+    }
+  
+  }
+  
+  @media screen and (min-width: 769px) {
+
+    .welcome {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .welcome-text {
+        height: auto;
+        margin: 0;
+        justify-content: start;
+    }
+
+    .welcome-text > p {
+        margin-top: 40px;
+        font-size: 18px;
+        line-height: calc(18px * 1.4);
+    }
+
+    .cta > button {
+        font-size: 18px;
+    }
+
+    .welcome-hero {
+        width: 70%;
+        margin: 0;
+    }
+    
+  }
+  
+  @media screen and (min-width: 1025px) {
+
+    .welcome-text > p {
+        margin-top: 40px;
+        font-size: 18px;
+        line-height: calc(18px * 1.4);
+        width: 60%;
+    }
+
+    .welcome-hero {
+        width: 50%;
+        margin: 0;
+    }
+    
+  }
+  
+  @media screen and (min-width: 1201px) {
+    
+  }
