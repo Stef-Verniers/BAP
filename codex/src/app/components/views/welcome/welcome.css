@@ -153,7 +153,8 @@ p > .cta {
   @media screen and (min-width: 1201px) {
 
     .welcome {
-        margin-left: 5%;
+        width: 100%;
+        margin-left: 0;
     }
 
     .welcome-text {
