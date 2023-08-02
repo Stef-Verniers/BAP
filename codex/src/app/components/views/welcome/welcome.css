@@ -5,7 +5,6 @@
     width: 90%;
     height: 100vh;
     padding-top: 10vh;
-
 }
 
 .welcome-text > h1 {
@@ -61,6 +60,7 @@ p > .cta {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        padding-top: 10vh;
     }
 
     .welcome-text > h1 {
@@ -103,6 +103,7 @@ p > .cta {
         justify-content: center;
         align-items: center;
         margin-left: 25%;
+        padding-top: 0vh;
     }
 
     .welcome-text > h1 {
