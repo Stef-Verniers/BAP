@@ -6,7 +6,7 @@ const Generator = () => {
             <div className='generator' id='generator'>
                 <div className="generator-content">
                     <h1>Generator</h1>
-                    <p>Heb je altijd al eens een idee gehad voor een eigen cantusnummer te schrijven terwijl je niks afweet van songwriting?
+                    <p>Heb je altijd al eens een idee gehad voor een eigen cantusnummer te schrijven terwijl je niks weet van songwriting?
                     <br/>
                     Dan kan deze generator daar jou zeker bij helpen!
                     <br/>
