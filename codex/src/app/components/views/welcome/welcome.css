@@ -137,6 +137,13 @@ p > .cta {
 
     .welcome {
         margin-left: 10%;
+        margin: 0;
+        height: 100vh;
+    }
+
+    .welcome-text {
+        margin: 0;
+        padding: 0;
     }
 
     .welcome-text > p {

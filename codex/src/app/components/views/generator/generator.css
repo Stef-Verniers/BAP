@@ -61,6 +61,13 @@
         height: auto;
     }
 
+    .generator-content > p {
+        margin-top: 5vh;
+        font-size: 18px;
+        width: 80%;
+        line-height: calc(18px * 1.5);
+    }
+
     .generator-form {
         height: auto;
         width: 70%;
@@ -83,6 +90,8 @@
         justify-content: space-between;
         width: 75%;
     }
+
+    
 
     .generator-form > input {
         width: 80%;
