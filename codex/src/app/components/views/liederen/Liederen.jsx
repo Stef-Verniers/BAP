@@ -4,16 +4,16 @@ import './liederen.css'
 const Liederen = () => {
     return (
         <>
-        <div className="liederen">
+        <div className="liederen" id='liederen'>
             <div className="liederen-content">
                 <h1>Liederen</h1>
-                <section className='liederen-section'>
+                <section id='zoeken' className='liederen-section'>
                     <h2 className='section-title'>Zoeken</h2>
                     <div className="liederen-zoeken">
                         <input type='text' placeholder='bvb. Jan Klaassen de Trompetter' />
                     </div>
                 </section>
-                <section className='liederen-section'>
+                <section id='plechtige-liederen' className='liederen-section'>
                     <h2 className='section-title'>Plechtige liederen</h2>
                     <div className="liederen-grid">
                         <div className="lied">
@@ -26,7 +26,7 @@ const Liederen = () => {
                         </div>
                     </div>
                 </section>
-                <section className='liederen-section'>
+                <section id='vaderland' className='liederen-section'>
                     <h2 className='section-title'>Vaderland</h2>
                     <div className="liederen-grid">
                         <div className="lied">

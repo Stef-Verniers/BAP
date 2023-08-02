@@ -1,4 +1,6 @@
 import { useState } from 'react';
+// import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import './sidebar.css'
 
 const Sidebar = () => {
@@ -13,25 +15,24 @@ const Sidebar = () => {
     return(
         <>
         <ul className={isActive ? 'nav open' : 'nav'}>
-            <li><a>Hoofdpagina</a></li>
-            <li><a className='active'>Liederen</a></li>
-            <ul className="subnav">
-                <li><a>Zoeken</a></li>
-                <li><a>Plechtige liederen</a></li>
-                <li><a>Vaderland</a></li>
-                <li><a>De Gilde Viert</a></li>
-                <li><a>Drinkliederen</a></li>
-                <li><a>Traditioneel</a></li>
-                <li><a>Die stem van Suid-Afrika</a></li>
-                <li><a>Die Burschenschaft</a></li>
-                <li><a>Over the Sea</a></li>
-                <li><a>Traditioneel</a></li>
-                <li><a>Au Quartier Latin</a></li>
-                <li><a>De wereld rond</a></li>
-                <li><a>Regionale Liederschat</a></li>
-                <li><a>Gallerij der Gentse Kringen en Clubs</a></li>
-            </ul>
-            <li><a>Generator</a></li>
+        <li><HashLink to='#welcome' smooth>Home</HashLink></li>
+            <li><HashLink to='#liederen' smooth>Liederen</HashLink></li>
+                <ul className="subnav">
+                    <li><HashLink to='#zoeken'  smooth>Zoeken</HashLink></li>
+                    <li><HashLink to='#plechtige-liederen'  smooth>Plechtige liederen</HashLink></li>
+                    <li><HashLink to='#vaderland'  smooth>Vaderland</HashLink></li>
+                    <li><HashLink to='#de-gilde-viert'  smooth>De Gilde Viert</HashLink></li>
+                    <li><HashLink to='#drinkliederen'  smooth>Drinkliederen</HashLink></li>
+                    <li><HashLink to='#traditioneel'  smooth>Traditioneel</HashLink></li>
+                    <li><HashLink to='#die-stem-van-suid-afrika'  smooth>Die stem van Suid-Afrika</HashLink></li>
+                    <li><HashLink to='#die-burschenschaft'  smooth>Die Burschenschaft</HashLink></li>
+                    <li><HashLink to='#over-the-sea'  smooth>Over the Sea</HashLink></li>
+                    <li><HashLink to='#traditioneel'  smooth>Traditioneel</HashLink></li>
+                    <li><HashLink to='#au-quartier-latin'  smooth>Au Quartier Latin</HashLink></li>
+                    <li><HashLink to='#de-wereld-rond'  smooth>De wereld rond</HashLink></li>
+                    <li><HashLink to='#regionale-liederschat'  smooth>Regionale Liederschat</HashLink></li>
+                </ul>
+            <li><HashLink to='#generator'  smooth>Generator</HashLink></li>
         </ul>
         <div className="trigger" id="trigger" onClick={toggleNav}>
             <div className={ isActive ? "circle filled" : "circle"} id="circle"></div>
