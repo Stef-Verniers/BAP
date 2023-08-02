@@ -1,9 +1,11 @@
 /* Mobile View */
 
 .welcome {
-    margin: 15vh auto 0 auto;
+    margin: 3vh auto 0 auto;
     width: 90%;
     height: 100vh;
+    padding-top: 10vh;
+
 }
 
 .welcome-text > h1 {

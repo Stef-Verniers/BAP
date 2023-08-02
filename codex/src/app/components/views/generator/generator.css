@@ -3,6 +3,8 @@
     margin: auto;
     min-height: 100vh;
     display: block;
+    padding-top: 5vh;
+
 }
 
 .generator-content {
@@ -51,6 +53,7 @@
         flex-direction: column;
         justify-content: start;
         align-items: start;
+        padding-top: 5vh;
     }
 
     .generator-content {
@@ -72,7 +75,7 @@
 
 }
 
-@media screen and (min-width: 769px) { 
+@media screen and (min-width: 1025px) { 
 
     .generator-form {
         display: flex;
