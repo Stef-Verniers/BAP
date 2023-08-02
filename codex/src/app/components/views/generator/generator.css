@@ -43,6 +43,39 @@
     border: solid 2px rgb(218, 218, 218);
 }
 
+.generator-answer {
+    height: auto;
+    width: 100%;
+    margin: 3vh auto 5vh auto;
+}
+
+.request {
+    color: black;
+    background-color: #C5C742;
+    padding: 10px
+}
+
+.answer {
+    background-color: rgb(245, 245, 245);
+    padding: 10px;
+}
+
+.answer > p {
+    font-size: 14px;
+    line-height: calc(14px * 1.5);
+}
+
+.aanduiding {
+    margin-bottom: 5px;
+}
+
+.liedtekst {
+    margin-bottom: 2vh;
+    font-size: 14px;
+    line-height: calc(14px * 1.5);
+}
+
+
 
 @media screen and (min-width: 769px) {
     .generator {
@@ -88,7 +121,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 75%;
+        width: 65%;
     }
 
     
@@ -98,6 +131,12 @@
         padding: 10px;
         border-radius: 8px;
         border: solid 1px rgb(218, 218, 218);
+        margin-right: 3vw;
+    }
+
+    .generator-answer {
+        width: 50%;
+        margin: 3vh 0 5vh 0;
     }
 
 
