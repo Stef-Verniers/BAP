@@ -26,6 +26,21 @@
     height: auto;
 }
 
+.liederen-zoeken {
+    height: 7vh;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.liederen-zoeken > input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: solid 1px rgb(218, 218, 218);
+}
+
 .lied {
     border-bottom: solid 1px rgb(218, 218, 218);
     display: flex;
@@ -61,6 +76,21 @@
         width: auto;
     }
 
+    .liederen-zoeken {
+        height: 7vh;
+        width: 95%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .liederen-zoeken > input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: solid 1px rgb(218, 218, 218);
+    }
+
 }
 
 @media screen and (min-width: 1201px) {
@@ -91,6 +121,21 @@
         width: 100%;
         flex-direction: column;
         justify-content: space-evenly;
+    }
+
+    .liederen-zoeken {
+        height: 7vh;
+        width: 45%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    
+    .liederen-zoeken > input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: solid 1px rgb(218, 218, 218);
     }
 
 }

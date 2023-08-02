@@ -8,6 +8,12 @@ const Liederen = () => {
             <div className="liederen-content">
                 <h1>Liederen</h1>
                 <section className='liederen-section'>
+                    <h2 className='section-title'>Zoeken</h2>
+                    <div className="liederen-zoeken">
+                        <input type='text' placeholder='bvb. Jan Klaassen de Trompetter' />
+                    </div>
+                </section>
+                <section className='liederen-section'>
                     <h2 className='section-title'>Plechtige liederen</h2>
                     <div className="liederen-grid">
                         <div className="lied">

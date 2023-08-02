@@ -1,7 +1,7 @@
 .nav {
     background-color: var(--blue);
     width: 60vw;
-    height: 80vh;
+    height: 90vh;
     margin: 0;
     padding: 40px 20px;
     position: fixed;
@@ -39,7 +39,7 @@ li > a {
 }
 
 .subnav > li {
-    margin-bottom: 4vh;
+    margin-bottom: 3vh;
 }
 
 .trigger {
