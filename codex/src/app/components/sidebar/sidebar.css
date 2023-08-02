@@ -81,7 +81,7 @@ li > a {
         height: 100vh;
         background-color: white;
         flex-direction: column;
-        width: auto;
+        width: 10vw;
         padding: 2vw;
         position: fixed;
         left: 0;
@@ -105,11 +105,11 @@ li > a {
     .nav > li {
         font-size: 30px;
         width: 100%;
-        margin-bottom: 4vh;
+        margin-bottom: 5vh;
     }
 
     .subnav > li {
-        margin-bottom: 4vh;
+        margin-bottom: 3vh;
     }
 
     .trigger {
