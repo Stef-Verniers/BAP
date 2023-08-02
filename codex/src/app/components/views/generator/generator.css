@@ -1,0 +1,93 @@
+.generator {
+    width: 90vw;
+    margin: auto;
+    min-height: 100vh;
+    display: block;
+}
+
+.generator-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.generator-content > h1 {
+    font-size: 42px;
+}
+
+.generator-content > p {
+    margin-top: 5vh;
+    font-size: 14px;
+    width: 80%;
+    line-height: calc(14px * 1.5);
+}
+
+.generator-section {
+    width: 100%;
+}
+
+.generator-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.generator-form > * {
+    margin-top: 3vh;
+}
+
+.generator-form > input {
+    width: auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: solid 2px rgb(218, 218, 218);
+}
+
+
+@media screen and (min-width: 769px) {
+    .generator {
+        width:auto;
+        height: auto;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .generator-content {
+        width: 60%;
+        height: auto;
+    }
+
+    .generator-form {
+        height: auto;
+        width: 70%;
+    }
+    
+    .generator-zoeken > input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: solid 1px rgb(218, 218, 218);
+    }
+
+}
+
+@media screen and (min-width: 769px) { 
+
+    .generator-form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 75%;
+    }
+
+    .generator-form > input {
+        width: 80%;
+        padding: 10px;
+        border-radius: 8px;
+        border: solid 1px rgb(218, 218, 218);
+    }
+
+
+
+}
