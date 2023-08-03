@@ -141,6 +141,8 @@
         width: 90%;
         margin: auto;
         flex-direction: row;
+        height: 100vh;
+        padding-top: 0;
     }
 
     .welcome-text {
