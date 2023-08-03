@@ -1,5 +1,6 @@
 import './generator.css'
 import { useState } from 'react'
+import { ThreeDots } from 'react-loader-spinner'
 
 const Generator = () => {
 
@@ -10,6 +11,9 @@ const Generator = () => {
 
     // Request voor de API
     const getMessages = async () => {
+        if (message) {
+            setMessage("")
+        }
         setRequest(value)
         const options = {
             method: "POST",
@@ -26,9 +30,9 @@ const Generator = () => {
         try {
             const response =  await fetch(`${import.meta.env.VITE_API_URL}/completions`, options)
             const data = await response.json()
-           setMessage(data.choices[0].message)
-           setAnswer(data.choices[0].message.content)
-           setValue('')
+            setMessage(data.choices[0].message)
+            setAnswer(data.choices[0].message.content)
+            setValue('')
         } catch (error) {
             console.error(error)
         }
@@ -50,6 +54,24 @@ const Generator = () => {
           </div>
         );
       }
+
+    function waitingForAnswer() {
+        if (message) {
+            return <div className="answer">{convertText(answer)}</div>
+        }
+        return <div className='loader'>
+                    <ThreeDots 
+                    height="80" 
+                    width="80" 
+                    radius="9"
+                    color="#4fa94d" 
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClassName=""
+                    visible={true}
+                    />
+                </div>
+    }
     
 
     return (
@@ -74,9 +96,7 @@ const Generator = () => {
                         <div className="request">
                             <strong><p>{request}</p></strong>
                         </div>
-                        <div className="answer">
-                            {convertText(answer)}
-                        </div>
+                        { waitingForAnswer() }
                     </section>
                 </div>
             </div>
