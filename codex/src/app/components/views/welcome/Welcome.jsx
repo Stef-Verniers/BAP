@@ -28,12 +28,8 @@ const Welcome = () => {
                     <br/>
                     Als je op zoek bent naar een persoonlijke touch, geef dan een input aan onze slimme AI en laat hem een gloednieuw cantusnummer voor je genereren. Voer een paar woorden in die je wilt dat in het nummer worden opgenomen, en onze AI zal een meeslepend lied creëren dat perfect past bij de sfeer van een cantus.
                 </p>
-                <div className="cta">
-                    <button className="button-1">Liederen</button>
-                    <button className="button-2">Codex AI</button>
-                </div>
             </div>
-            <div className="welcome-hero" style={{ display: currentWidth < 1025 ? 'none' : 'flex' }}>
+            <div className="welcome-hero" style={{ display: currentWidth < 1201 ? 'none' : 'flex' }}>
                 <div className="hero-image">
                     <img src={Hero} />
                 </div>

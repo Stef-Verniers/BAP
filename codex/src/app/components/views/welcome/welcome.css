@@ -95,14 +95,14 @@ p > .cta {
   @media screen and (min-width: 769px) {
 
     .welcome {
-        width: 80%;
+        width: 65vw;
         margin: 0;
         display: flex;
         flex-direction: row;
-        height: 100vh;
+        height: auto;
         justify-content: center;
         align-items: center;
-        margin-left: 25%;
+        margin-left: 25vw;
         padding-top: 0vh;
     }
 
@@ -136,13 +136,19 @@ p > .cta {
   @media screen and (min-width: 1025px) {
 
     .welcome {
-        margin-left: 10%;
+        width: 75vw;
+        height: auto;
         margin: 0;
-        height: 100vh;
+        padding-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .welcome-text {
-        margin: 0;
+        height: auto;
+        width: 80%;
         padding: 0;
     }
 

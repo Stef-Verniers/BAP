@@ -83,22 +83,37 @@
     align-items: center;
 }
 
+.ghost {
+    display: none;
+    visibility: hidden;
+    transform: all 0.7s ease;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+    transform: all 0.7s ease;
+}
+
 
 
 @media screen and (min-width: 769px) {
     .generator {
-        width:auto;
+        width: 65vw;
         height: auto;
         margin: 0;
         display: flex;
         flex-direction: column;
-        justify-content: start;
-        align-items: start;
-        padding-top: 5vh;
+        justify-content: center;
+        align-items: center;
+        margin-left: 25vw;
+        margin-bottom: 15vh;
+        min-height: 0;
+
     }
 
     .generator-content {
-        width: 60%;
+        width: 80%;
         height: auto;
     }
 
@@ -125,11 +140,30 @@
 
 @media screen and (min-width: 1025px) { 
 
+    .generator {
+        width: 75vw;
+        height: auto;
+        margin: 0;
+        padding-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15vh;
+
+    }
+
+    .generator-content {
+        height: auto;
+        width: 80%;
+        padding: 0;
+    }
+
     .generator-form {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        width: 65%;
+        width: 600px;
     }
 
     .generator-form > input {
@@ -141,27 +175,12 @@
     }
 
     .generator-answer {
-        width: auto;
-        height: 50vh;
+        width: 600px;
+        height: auto;
         margin: 3vh 0 5vh 0;
     }
 
     .answer {
         height: 100%;
     }
-
-    .block {
-        display: block;
-    }
-
-    .inline-block {
-        display: inline-block;
-        word-wrap: normal;
-        word-break: normal;
-        word-spacing: normal;
-
-    }
-
-
-
 }

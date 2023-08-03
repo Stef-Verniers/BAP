@@ -55,18 +55,18 @@
 
 @media screen and (min-width: 769px) {
     .liederen {
-        width:auto;
+        width: 65vw;
         height: auto;
         margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-left: 15%;
+        margin-left: 25vw;
     }
 
     .liederen-content {
-        width: 60%;
+        width: 80%;
     }
 
     .lied {
@@ -80,7 +80,7 @@
 
     .liederen-zoeken {
         height: 7vh;
-        width: 95%;
+        width: 100%;
         display: flex;
         justify-content: start;
         align-items: center;
@@ -92,6 +92,26 @@
         border-radius: 8px;
         border: solid 1px rgb(218, 218, 218);
     }
+}
+
+@media screen and (min-width: 1025px) {
+    .liederen {
+        width: 75vw;
+        height: auto;
+        margin: 0;
+        padding-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .liederen-content {
+        height: auto;
+        width: 80%;
+        padding: 0;
+    }
+
 
 }
 

@@ -81,7 +81,7 @@ li > a {
         height: 100vh;
         background-color: white;
         flex-direction: column;
-        width: 10vw;
+        width: 25vw;
         padding: 2vw;
         position: fixed;
         left: 0;
@@ -91,11 +91,13 @@ li > a {
 
     li {
         list-style-type: none;
+        
     }
 
     li > a {
         color: black;
-        cursor: pointer
+        cursor: pointer;
+        font-size: 24px;
     }
 
     .active {
@@ -105,15 +107,37 @@ li > a {
     .nav > li {
         font-size: 30px;
         width: 100%;
-        margin-bottom: 5vh;
+        margin-bottom: 2vh;
     }
 
     .subnav > li {
         margin-bottom: 3vh;
+        font-size: 16px;
+    }
+
+    .subnav > li > a {
+        font-size: 14px;
     }
 
     .trigger {
         display: none;
+    }
+
+}
+
+@media screen and (min-width: 1025px) {
+
+    .nav {
+        transform: translateX(0vw);
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        width: 20vw;
+        padding: 2vw;
+        position: fixed;
+        left: 0;
+        border-right: 1px solid rgb(218, 218, 218);
+        list-style-type: none;
     }
 
 }

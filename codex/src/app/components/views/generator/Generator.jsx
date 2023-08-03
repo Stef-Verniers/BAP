@@ -19,7 +19,7 @@ const Generator = () => {
             method: "POST",
             body: JSON.stringify(
                 {
-                    message: `Kan je mij een Vlaams cantusnummer genereren over ${value} dat rijmt`
+                    message: `Kan je mij een Vlaams cantusnummer genereren over ${value} dat rijmt met een 1 refrein en verschillende strofes`
                 }
             ),
             headers: {
@@ -42,10 +42,7 @@ const Generator = () => {
     // functie om tabs toe te voegen zodat het niet 1 lange tekst wordt.
     function convertText(input) {
         const sections = input.split(/\(([^)]+)\)/).filter(Boolean);
-        // if (sections.match('Refrein:'|| 'Couplet')) {
-        //     return console.log('er is een match')
-        // }
-        console.log(sections[0])
+        console.log(sections[1])
         return (
           <div style={{ whiteSpace: 'pre-line' }}>
             {sections}
