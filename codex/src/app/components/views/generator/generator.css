@@ -66,12 +66,14 @@
 
 .aanduiding {
     margin-bottom: 5px;
+    font-weight: 700;
 }
 
 .liedtekst {
     margin-bottom: 2vh;
     font-size: 14px;
     line-height: calc(14px * 1.5);
+    font-weight: 400;
 }
 
 .loader {
@@ -130,8 +132,6 @@
         width: 65%;
     }
 
-    
-
     .generator-form > input {
         width: 80%;
         padding: 10px;
@@ -141,8 +141,25 @@
     }
 
     .generator-answer {
-        width: 50%;
+        width: auto;
+        height: 50vh;
         margin: 3vh 0 5vh 0;
+    }
+
+    .answer {
+        height: 100%;
+    }
+
+    .block {
+        display: block;
+    }
+
+    .inline-block {
+        display: inline-block;
+        word-wrap: normal;
+        word-break: normal;
+        word-spacing: normal;
+
     }
 
 

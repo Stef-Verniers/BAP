@@ -38,19 +38,17 @@ const Generator = () => {
         }
     }
 
+
     // functie om tabs toe te voegen zodat het niet 1 lange tekst wordt.
     function convertText(input) {
         const sections = input.split(/\(([^)]+)\)/).filter(Boolean);
+        // if (sections.match('Refrein:'|| 'Couplet')) {
+        //     return console.log('er is een match')
+        // }
+        console.log(sections[0])
         return (
-          <div>
-            {sections.map((section, index) => {
-              if (index % 2 === 1) {
-                return <h2 key={index} className='liedtekst'>{section.trim()}</h2>;
-              } else {
-                const sectionContent = section.trim().split(/,\s*/).join(',\n');
-                return <p key={index} className='aanduiding'>{sectionContent}</p>;
-              }
-            })}
+          <div style={{ whiteSpace: 'pre-line' }}>
+            {sections}
           </div>
         );
       }
@@ -58,7 +56,7 @@ const Generator = () => {
     function waitingForAnswer() {
         if (message) {
             return <div className="answer">{convertText(answer)}</div>
-        }
+        }        
         return <div className='loader'>
                     <ThreeDots 
                     height="80" 
