@@ -1,20 +1,15 @@
-const PORT = 8000
 import express from 'express';
 import cors from 'cors'
+import process from 'process'
 const app = express()
 app.use(express.json())
 app.use(cors())
-
-
-const KEY = "Here is my special key that I've place here so I can develop";
-console.log(process.env.REACT_APP_API_KEY)
-console.log(import.meta.env.VITE_API_KEY)
 
 app.post('/completions', async (req, res) => {
     const options = {
         method: "post",
         headers: {
-            "Authorization": `Bearer ${KEY}`,
+            "Authorization": `Bearer ${process.env.KEY}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -35,4 +30,4 @@ app.post('/completions', async (req, res) => {
     }
 })
 
-app.listen(PORT, () => console.log('your server is running on port ' + PORT))
+app.listen(process.env.PORT, () => console.log('your server is running on port ' + process.env.PORT))

@@ -3,8 +3,8 @@ import { useState } from 'react'
 
 const Generator = () => {
 
-    const [value, setValue] = useState(null)
-    const [message, setMessage] = useState(null)
+    const [value, setValue] = useState("")
+    const [message, setMessage] = useState("")
     const [request, setRequest] = useState('')
     const [answer, setAnswer] = useState('')
 
@@ -24,8 +24,8 @@ const Generator = () => {
         }
 
         try {
-           const response =  await fetch('http://localhost:8000/completions', options)
-           const data = await response.json()
+            const response =  await fetch(`${import.meta.env.VITE_API_URL}/completions`, options)
+            const data = await response.json()
            setMessage(data.choices[0].message)
            setAnswer(data.choices[0].message.content)
            setValue('')
@@ -37,7 +37,6 @@ const Generator = () => {
     // functie om tabs toe te voegen zodat het niet 1 lange tekst wordt.
     function convertText(input) {
         const sections = input.split(/\(([^)]+)\)/).filter(Boolean);
-
         return (
           <div>
             {sections.map((section, index) => {

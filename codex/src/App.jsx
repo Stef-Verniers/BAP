@@ -9,16 +9,16 @@ import Generator from './app/components/views/generator/Generator'
 function App() {
 
   return (
-    <body>
-      <Sidebar /> 
-      <main> 
+    <>
+    <Sidebar />
+      <main>
         <Welcome />
         <Liederen />
         <Generator />
         {/* <Routes>
         </Routes> */}
       </main>
-    </body>
+    </>
   )
 }
 
