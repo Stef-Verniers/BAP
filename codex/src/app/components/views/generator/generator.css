@@ -184,3 +184,22 @@
         height: 100%;
     }
 }
+
+@media screen and (min-width: 1201px) {
+
+    .generator {
+        width: 90%;
+        margin: auto;
+        padding-top: 5vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .generator-content {
+        width: 100%;
+        height: 100%;
+    }
+
+}

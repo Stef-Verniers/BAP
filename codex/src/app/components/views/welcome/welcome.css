@@ -30,20 +30,6 @@
     width: 100%;
 }
 
-p > .cta {
-    margin-top: 5vh;
-} 
-
-.cta {
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-}
-
-.cta > * {
-    margin-right: 40px;
-}
-
 .mobile {
     text-align: center;
     margin: auto;
@@ -76,19 +62,6 @@ p > .cta {
     p {
         width: 100%;
     }
-
-    .cta {
-        display: flex;
-        flex-direction: row;
-        justify-content: start;
-        margin-top: 5vh;
-    }
-
-    .cta > button {
-        margin-right: 20px;
-        font-size: 24px;
-
-    }
   
   }
   
@@ -120,10 +93,6 @@ p > .cta {
         margin-top: 40px;
         font-size: 18px;
         line-height: calc(18px * 1.4);
-    }
-
-    .cta > button {
-        font-size: 18px;
     }
 
     .welcome-hero {
@@ -169,16 +138,18 @@ p > .cta {
   @media screen and (min-width: 1201px) {
 
     .welcome {
-        width: 100%;
-        margin-left: 0;
+        width: 90%;
+        margin: auto;
+        flex-direction: row;
     }
 
     .welcome-text {
-        width: 100%;
+        width: 80%;
     }
 
     .welcome-hero {
-        width: 60%;
+        width: 50%;
+        margin-right: 5vw;
     }
     
   }

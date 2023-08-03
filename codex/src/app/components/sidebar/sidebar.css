@@ -141,3 +141,37 @@ li > a {
     }
 
 }
+
+@media screen and (min-width: 1201px) {
+
+    .nav {
+        transform: translateX(0vw);
+        height: 100vh;
+        background-color: white;
+        flex-direction: column;
+        width: 13vw;
+        padding: 2vw;
+        position: fixed;
+        left: 0;
+        border-right: 1px solid rgb(218, 218, 218);
+        list-style-type: none;
+    }
+
+    .nav > li {
+        margin-bottom: 5vh;
+    }
+
+    li > a {
+        font-size: 28px;
+    }
+
+    .subnav > li {
+        margin-bottom: 4vh;
+    }
+
+    .subnav > li > a {
+        font-size: 18px;
+       
+    }
+
+}
