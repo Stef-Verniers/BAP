@@ -8,18 +8,36 @@ const Generator = () => {
     const [message, setMessage] = useState("")
     const [request, setRequest] = useState('')
     const [answer, setAnswer] = useState('')
+    const [taal, setTaal] = useState('Vlaams')
+    const talen = [
+        'Vlaams',
+        'Frans',
+        'Engels',
+        'Duits',
+        'Zuid-Afrikaans',
+        'Spaans',
+        'Italiaans',
+        'Latijns'
+    ]
+
+    console.log(taal);
 
     // Request voor de API
     const getMessages = async () => {
         if (message) {
             setMessage("")
         }
-        setRequest(value)
+        setRequest(value, taal)
         const options = {
             method: "POST",
             body: JSON.stringify(
                 {
-                    message: `Kan je mij een Vlaams cantusnummer genereren over ${value} dat rijmt met een 1 refrein en verschillende strofes`
+                    message: `Kan je mij een ${taal} cantusnummer genereren over ${value}
+                    met rijmschema AABB
+                    met respect voor de context
+                    zonder bevestiging of opmerkingen
+                    zonder het vermelden van het begrip cantus
+                    `
                 }
             ),
             headers: {
@@ -84,12 +102,20 @@ const Generator = () => {
                     <section className='generator-section'>
                         <form className='generator-form'>
                             <input type='text' placeholder='Een vos die in de overpoort loopt'  value={value} onChange={(e) => setValue(e.target.value) }/>
+                            <span>in het</span>
+                            <select value={taal} onChange={(e) => setTaal(e.target.value)}>
+                                {talen.map((item, key) => (
+                                    <option key={key} value={item}>
+                                        {item}
+                                    </option>
+                                ))}
+                            </select>
                             <button type='submit' id='submit' onClick={getMessages} className='button-1'>Genereren</button>
                         </form>
                     </section>
                     <section className='generator-answer' id='answer' style={{ display: request ? 'block' : 'none' }}>
                         <div className="request">
-                            <strong><p>{request}</p></strong>
+                            <strong><p>{`${request} (${taal})`}</p></strong>
                         </div>
                         { waitingForAnswer() }
                     </section>
