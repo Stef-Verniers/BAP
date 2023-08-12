@@ -1,18 +1,22 @@
 .generator {
-    width: 90vw;
-    margin: auto;
+    width: 90%;
+    margin-left: 10px;
+    margin-right: 10px;
     min-height: 100vh;
     display: block;
     padding-top: 5vh;
 }
 
 .generator-content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(4, auto);
+    height: auto;
 }
 
-.generator-content > h1 {
+.generator-info > h1 {
     font-size: 42px;
+    margin-bottom: 3vh;
 }
 
 .generator-content > p {
@@ -24,6 +28,14 @@
 
 .generator-section {
     width: 100%;
+    grid-column: 1;
+    grid-row: 3;
+    margin: 3vh auto;
+}
+
+.generator-info {
+    grid-row: 1;
+    grid-column: 1;
 }
 
 .generator-form {
@@ -46,6 +58,8 @@
     height: auto;
     width: 100%;
     margin: 3vh auto 5vh auto;
+    grid-column: 1;
+    grid-row: 4;
 }
 
 .request {
@@ -104,6 +118,44 @@ select {
     padding: 10px;
     border-radius: 8px;
     border: solid 2px rgb(218, 218, 218);
+}
+
+.generator-list {
+    grid-column: 1;
+    width: 100%;
+    margin: 4vh auto;
+}
+
+.generator-list > h2 {
+    font-size: 22px;
+    margin: 1vh auto 2vh auto;
+}
+
+.list-container {
+    transition: max-height 0.3s ease-in-out;
+    height: auto
+}
+
+.list-container > li {
+    width: 96%;
+    height: 40px;
+    line-height: 40px;
+    padding: 5px 0;
+    padding-left: 3%;
+    vertical-align: middle;
+}
+
+.list-container > li:nth-child(odd) {
+    background-color: rgb(221, 221, 221);
+}
+
+.list-container > li:nth-child(even) {
+    background-color: rgb(194, 194, 194);
+}
+
+.hidden {
+    display: none;
+    height: 0px;
 }
 
 

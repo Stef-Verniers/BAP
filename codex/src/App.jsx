@@ -1,4 +1,4 @@
-// import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 // import { HashLink as Link } from 'react-router-hash-link'
 import Welcome from './app/components/views/welcome/Welcome'
 import Sidebar from './app/components/sidebar/Sidebar'
@@ -11,10 +11,10 @@ function App() {
     <>
     <Sidebar />
       <main>
-        <Welcome />
-        <Generator />
-        {/* <Routes>
-        </Routes> */}
+        <Routes>
+          <Route path={'/'} element={<Welcome />} />
+          <Route path={'/generator'} element={<Generator />} />
+        </Routes>
       </main>
     </>
   )

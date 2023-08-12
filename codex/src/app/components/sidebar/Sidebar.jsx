@@ -1,6 +1,5 @@
 import { useState } from 'react';
-// import { Link } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router-dom'
 import './sidebar.css'
 import { useLocation } from 'react-router-dom';
 
@@ -17,8 +16,8 @@ const Sidebar = () => {
     return(
         <>
         <ul className={isActive ? 'nav open' : 'nav'}>
-            <li><HashLink to='#welcome' smooth className={location.hash === '#welcome' ? 'active' : ''}>Home</HashLink></li>
-            <li><HashLink to='#generator' smooth className={location.hash === '#generator' ? 'active' : ''}>Generator</HashLink></li>
+            <li><Link to='/' className={location.hash === '#welcome' ? 'active' : ''}>Home</Link></li>
+            <li><Link to='/generator' className={location.hash === '#generator' ? 'active' : ''}>Generator</Link></li>
         </ul>
         <div className="trigger" id="trigger" onClick={toggleNav}>
             <div className={ isActive ? "circle filled" : "circle"} id="circle"></div>

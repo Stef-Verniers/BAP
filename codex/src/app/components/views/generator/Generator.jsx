@@ -1,5 +1,5 @@
 import './generator.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ThreeDots } from 'react-loader-spinner'
 
 const Generator = () => {
@@ -20,14 +20,15 @@ const Generator = () => {
         'Latijns'
     ]
 
-    console.log(taal);
+    const [toggled, setToggled] = useState(false)
 
     // Request voor de API
-    const getMessages = async () => {
+    const getMessages = async (e) => {
+        e.preventDefault()
+        setRequest(value, taal)
         if (message) {
             setMessage("")
         }
-        setRequest(value, taal)
         const options = {
             method: "POST",
             body: JSON.stringify(
@@ -56,7 +57,6 @@ const Generator = () => {
         }
     }
 
-
     // functie om tabs toe te voegen zodat het niet 1 lange tekst wordt.
     function convertText(input) {
         const sections = input.split(/\(([^)]+)\)/).filter(Boolean);
@@ -66,7 +66,13 @@ const Generator = () => {
             {sections}
           </div>
         );
-      }
+    }
+
+    function toggleList() {
+        setToggled(!toggled)
+    }
+
+
 
     function waitingForAnswer() {
         if (message) {
@@ -91,14 +97,16 @@ const Generator = () => {
         <>
             <div className='generator' id='generator'>
                 <div className="generator-content">
-                    <h1>Generator</h1>
-                    <p>Heb je altijd al eens een idee gehad voor een eigen cantusnummer te schrijven terwijl je niks weet van songwriting?
-                    <br/>
-                    Dan kan deze generator daar jou zeker bij helpen!
-                    <br/>
-                    <br/>
-                    Geef een keyword of schrijf een situatie en de generator doet de rest.
-                    </p>
+                    <section className='generator-info'>
+                        <h1>Generator</h1>
+                        <p>Heb je altijd al eens een idee gehad voor een eigen cantusnummer te schrijven terwijl je niks weet van songwriting?
+                        <br/>
+                            Dan kan deze generator daar jou zeker bij helpen!
+                        <br/>
+                        <br/>
+                            Geef een keyword of schrijf een situatie, kies in welke taal je het liedje wil en de generator doet de rest.
+                        </p>
+                    </section>
                     <section className='generator-section'>
                         <form className='generator-form'>
                             <input type='text' placeholder='Een vos die in de overpoort loopt'  value={value} onChange={(e) => setValue(e.target.value) }/>
@@ -112,6 +120,12 @@ const Generator = () => {
                             </select>
                             <button type='submit' id='submit' onClick={getMessages} className='button-1'>Genereren</button>
                         </form>
+                    </section>
+                    <section className='generator-list'>
+                        <h2 onClick={toggleList}>Recente zoekopdrachten</h2>
+                        <ul className={`list-container ${toggled ? '' : 'hidden'} `}>
+                            <li>test</li>
+                        </ul>
                     </section>
                     <section className='generator-answer' id='answer' style={{ display: request ? 'block' : 'none' }}>
                         <div className="request">
