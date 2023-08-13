@@ -6,10 +6,12 @@ import { ThreeDots } from 'react-loader-spinner'
 const Generator = () => {
 
     const [value, setValue] = useState("")
+    const [isGenerated, setIsGenerated] = useState(false)
     const [message, setMessage] = useState("")
     const [request, setRequest] = useState('')
     const [answer, setAnswer] = useState('')
     const [taal, setTaal] = useState('Vlaams')
+    const [previewTaal, setPreviewTaal] = useState('')
     const talen = [
         'Vlaams',
         'Frans',
@@ -29,6 +31,7 @@ const Generator = () => {
         setRequest(value, taal)
         if (message) {
             setMessage("")
+            setPreviewTaal(taal)
         }
         const options = {
             method: "POST",
@@ -52,6 +55,7 @@ const Generator = () => {
             const data = await response.json()
             setMessage(data.choices[0].message)
             setAnswer(data.choices[0].message.content)
+            setIsGenerated(true)
             setValue('')
         } catch (error) {
             console.error(error)
@@ -71,7 +75,6 @@ const Generator = () => {
     function toggleList() {
         setToggled(!toggled)
     }
-
 
 
     function waitingForAnswer() {
@@ -132,7 +135,7 @@ const Generator = () => {
                     </section>
                     <section className='generator-answer' id='answer' style={{ display: request ? 'block' : 'none' }}>
                         <div className="request">
-                            <strong><p>{`${request} (${taal})`}</p></strong>
+                            <strong><p>{`${request} (${previewTaal})`}</p></strong>
                         </div>
                         { waitingForAnswer() }
                     </section>
