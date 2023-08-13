@@ -14,7 +14,7 @@ app.get('/test', function(req, res){
     res.send("Hello from the root application URL");
 });
 
-app.post('/completions', cors(), async (req, res) => {
+app.post('/completions', async (req, res) => {
     const options = {
         method: "post",
         headers: {
