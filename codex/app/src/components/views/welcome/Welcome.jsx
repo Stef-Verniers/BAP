@@ -30,11 +30,11 @@ const Welcome = () => {
                 </p>
             </div>
             <div className="welcome-hero" style={{ display: currentWidth < 1201 ? 'none' : 'flex' }}>
+            <picture>
                 <div className="hero-image">
-                    <picture>
                         <img src={Hero} />
-                    </picture>
                 </div>
+            </picture>
             </div>
         </section>
         </>

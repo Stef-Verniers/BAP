@@ -182,6 +182,12 @@ select {
     transition: all 0.1s ease;
 }
 
+button:disabled {
+    background-color: dimgrey;
+    color: linen;
+    opacity: 1;
+}
+
 @media screen and (min-width: 769px) {
     .generator {
         width: 65vw;

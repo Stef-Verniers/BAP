@@ -6,12 +6,12 @@ import { ThreeDots } from 'react-loader-spinner'
 const Generator = () => {
 
     const [value, setValue] = useState("")
-    const [isGenerated, setIsGenerated] = useState(false)
     const [message, setMessage] = useState("")
     const [request, setRequest] = useState('')
     const [answer, setAnswer] = useState('')
-    const [taal, setTaal] = useState('Vlaams')
-    const [previewTaal, setPreviewTaal] = useState('')
+    const [taal, setTaal] = useState('')
+    const [preview, setPreview] = useState('');
+
     const talen = [
         'Vlaams',
         'Frans',
@@ -31,7 +31,6 @@ const Generator = () => {
         setRequest(value, taal)
         if (message) {
             setMessage("")
-            setPreviewTaal(taal)
         }
         const options = {
             method: "POST",
@@ -51,11 +50,11 @@ const Generator = () => {
         }
 
         try {
+            setPreview(taal)
             const response =  await fetch(`${import.meta.env.VITE_API_URL}/completions`, options)
             const data = await response.json()
             setMessage(data.choices[0].message)
             setAnswer(data.choices[0].message.content)
-            setIsGenerated(true)
             setValue('')
         } catch (error) {
             console.error(error)
@@ -115,13 +114,16 @@ const Generator = () => {
                             <input type='text' placeholder='Een vos die in de overpoort loopt'  value={value} onChange={(e) => setValue(e.target.value) }/>
                             <span>in het</span>
                             <select value={taal} onChange={(e) => setTaal(e.target.value)}>
-                                {talen.map((item, key) => (
-                                    <option key={key} value={item}>
-                                        {item}
-                                    </option>
-                                ))}
+                            <option hidden value="" disabled>
+                                Kies een taal
+                            </option>
+                            {talen.map((item, key) => (
+                                <option key={key} value={item}>
+                                {item}
+                                </option>
+                            ))}
                             </select>
-                            <button type='submit' id='submit' onClick={getMessages} className='button-1'>Genereren</button>
+                            <button type='submit' id='submit' onClick={getMessages} className={`button-1`} disabled={ taal ? false : true } >Genereren</button>
                         </form>
                     </section>
                     <section className='generator-list'>
@@ -135,7 +137,7 @@ const Generator = () => {
                     </section>
                     <section className='generator-answer' id='answer' style={{ display: request ? 'block' : 'none' }}>
                         <div className="request">
-                            <strong><p>{`${request} (${previewTaal})`}</p></strong>
+                            <strong><p>{`${request} (${preview})`}</p></strong>
                         </div>
                         { waitingForAnswer() }
                     </section>
