@@ -1,5 +1,5 @@
 import './generator.css'
-import arrow from '../../../../assets/images/arrow.svg'
+import arrow from '../../../assets/images/arrow.svg'
 import { useEffect, useState } from 'react'
 import { ThreeDots } from 'react-loader-spinner'
 
@@ -50,7 +50,6 @@ const Generator = () => {
         try {
             const response =  await fetch(`${import.meta.env.VITE_API_URL}/completions`, options)
             const data = await response.json()
-            console.log(data);
             setMessage(data.choices[0].message)
             setAnswer(data.choices[0].message.content)
             setValue('')

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Hero from '../../../../assets/images/Codex.png'
+import Hero from '../../../assets/images/Codex.png'
 import './welcome.css'
 
 const Welcome = () => {
