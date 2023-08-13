@@ -1,4 +1,5 @@
 import './generator.css'
+import arrow from '../../../../assets/images/arrow.svg'
 import { useEffect, useState } from 'react'
 import { ThreeDots } from 'react-loader-spinner'
 
@@ -37,7 +38,7 @@ const Generator = () => {
                     met rijmschema AABB
                     met respect voor de context
                     zonder bevestiging of opmerkingen
-                    zonder het vermelden van het begrip cantus
+                    zonder het vermelden van het begrip cantus of rijmschema AABB
                     `
                 }
             ),
@@ -49,6 +50,7 @@ const Generator = () => {
         try {
             const response =  await fetch(`${import.meta.env.VITE_API_URL}/completions`, options)
             const data = await response.json()
+            console.log(data);
             setMessage(data.choices[0].message)
             setAnswer(data.choices[0].message.content)
             setValue('')
@@ -60,7 +62,6 @@ const Generator = () => {
     // functie om tabs toe te voegen zodat het niet 1 lange tekst wordt.
     function convertText(input) {
         const sections = input.split(/\(([^)]+)\)/).filter(Boolean);
-        console.log(sections[1])
         return (
           <div style={{ whiteSpace: 'pre-line' }}>
             {sections}
@@ -122,7 +123,10 @@ const Generator = () => {
                         </form>
                     </section>
                     <section className='generator-list'>
-                        <h2 onClick={toggleList}>Recente zoekopdrachten</h2>
+                        <div className='list-meta'>
+                            <h2 onClick={toggleList}>Recente zoekopdrachten</h2>
+                            <img className={`${toggled ? 'shown' : 'closed'}`} src={arrow} onClick={toggleList} />
+                        </div>
                         <ul className={`list-container ${toggled ? '' : 'hidden'} `}>
                             <li>test</li>
                         </ul>

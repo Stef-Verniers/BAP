@@ -38,6 +38,19 @@
     grid-column: 1;
 }
 
+.list-meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 1px #d6d6d6;
+    padding-bottom: 5px;
+}
+
+.list-meta > img {
+    width: 5%;
+    padding-right: 2%;
+}
+
 .generator-form {
     display: flex;
     flex-direction: column;
@@ -69,7 +82,7 @@
 }
 
 .answer {
-    background-color: rgb(245, 245, 245);
+    /* background-color: rgb(245, 245, 245); */
     padding: 10px;
 }
 
@@ -133,7 +146,8 @@ select {
 
 .list-container {
     transition: max-height 0.3s ease-in-out;
-    height: auto
+    height: auto;
+    margin-top: 2vh;
 }
 
 .list-container > li {
@@ -158,7 +172,15 @@ select {
     height: 0px;
 }
 
+.shown {
+    transform: rotateX(180deg);
+    transition: all 0.1s ease;
+}
 
+.closed {
+    transform: rotateX(0deg);
+    transition: all 0.1s ease;
+}
 
 @media screen and (min-width: 769px) {
     .generator {
@@ -210,6 +232,11 @@ select {
         padding: 10px;
         border-radius: 8px;
         border: solid 2px rgb(218, 218, 218);
+    }
+
+    .list-meta > img {
+        width: 4%;
+        padding-right: 2%;
     }
 
 }
@@ -269,27 +296,48 @@ select {
         border-radius: 8px;
         border: solid 1px rgb(218, 218, 218);
         margin-right: 3vw;
-
     }
+
+    .list-meta > img {
+        width: 3%;
+        padding-right: 2%;
+    }
+
 }
 
 @media screen and (min-width: 1201px) {
 
     .generator {
         width: 90%;
-        margin: auto;
-        padding-top: 5vh;
+        margin: 0 40px;
         display: flex;
         flex-direction: column;
         justify-content: start;
         align-items: center;
         min-height: 100vh;
+        padding-top: 0;
     }
 
     .generator-content {
         width: 100%;
         height: 90%;
         padding-top: 10vh;
+        grid-template-columns: 50% 40%;
+        grid-template-rows: 200px 100px auto 300px;
+        grid-gap: 10px;
+        column-gap: 50px;
+    }
+
+    .generator-info {
+        grid-column: 1;
+        grid-row: 1;
+        height: fit-content;
+    }
+
+    .generator-section {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 0;
     }
 
     .generator-form {
@@ -297,11 +345,11 @@ select {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 1000px;
+        width: 90%;
     }
 
     .generator-form > input {
-        width: 90%;
+        width: 60%;
         padding: 10px;
         border-radius: 8px;
         border: solid 1px rgb(218, 218, 218);
@@ -311,6 +359,8 @@ select {
         width: 600px;
         height: auto;
         margin: 3vh 0 5vh 0;
+        grid-column: 2;
+        grid-row: 1/4;
     }
 
     .answer {
@@ -328,7 +378,15 @@ select {
         border-radius: 8px;
         border: solid 1px rgb(218, 218, 218);
         margin-right: 3vw;
+    }
 
+    .generator-list {
+        grid-row: 3;
+    }
+
+    .list-meta > img {
+        width: 2%;
+        padding-right: 2%;
     }
 
 }
