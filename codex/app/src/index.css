@@ -11,10 +11,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
   background-color: white;
-  overflow-x: hidden;
-
 }
 
 a {
@@ -26,17 +23,10 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  min-width: 100vw;
-  min-height: 100vh;
-}
-
 main {
-  width: 100vw;
+  width: 100%;
   margin: auto;
+  height: 90vh;
 }
 
 h1 {

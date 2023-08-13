@@ -3,8 +3,8 @@
 .welcome {
     margin: 3vh auto 0 auto;
     width: 90%;
-    height: 100vh;
-    padding-top: 10vh;
+    height: 100%;
+    position: relative;
 }
 
 .welcome-text > h1 {
@@ -34,6 +34,16 @@
     text-align: center;
     margin: auto;
     justify-content: center;
+}
+
+.nav-button {
+    width: 95%;
+    position: absolute;
+    bottom: 0;
+}
+
+.nav-button > a > button {
+    width: 100% !important;
 }
 
 
