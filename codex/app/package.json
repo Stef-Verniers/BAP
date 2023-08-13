@@ -3,10 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "localhost:5173/home",
   "scripts": {
     "dev": "vite",
-    "server": "nodemon -r dotenv-flow/config server.js",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
