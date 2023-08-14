@@ -15,11 +15,12 @@
 .welcome-text > p {
     font-size: 14px;
     line-height: calc(14px * 1.5);
-    width: 80%;
+    width: 100%;
 }
 
 .welcome-hero  {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     margin-top: 5vh;
 }
 
