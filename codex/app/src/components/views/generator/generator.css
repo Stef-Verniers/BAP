@@ -360,7 +360,7 @@ button:disabled {
         grid-template-columns: 50% 50%;
         grid-template-rows: 200px 100px auto 300px;
         grid-gap: 10px;
-        column-gap: 100px;
+        column-gap: 150px;
         margin: auto;
     }
 
