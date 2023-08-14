@@ -18,19 +18,15 @@ const Welcome = () => {
         <>
         <section className="welcome" id="welcome">
             <div className="welcome-text">
-                <h1>Studentencodex Online</h1>
+                <h1>Cantusgenerator</h1>
                 <p>
-                    Welkom bij studentencodex online.
+                    Welkom bij de online cantusgenerator.
                     <br/>
                     <br/>
-                    Blader door onze uitgebreide collectie cantusliedjes en zing de longen uit je lijf op je favoriete cantusnummers.
-                    Door middel van de meegeleverde audioclip kan je luisteren naar liedjes om ze te oefenen zodat jij jouw codexkennis kan verhogen.
-                    <br/>
-                    <br/>
-                    Als je op zoek bent naar een persoonlijke touch, geef dan een input aan onze slimme AI en laat hem een gloednieuw cantusnummer voor je genereren. Voer een paar woorden in die je wilt dat in het nummer worden opgenomen, en onze AI zal een meeslepend lied creëren dat perfect past bij de sfeer van een cantus.
+                    Met behulp van AI kan jij nu zelf je eigen cantusliedjes aanmaken. Druk op onderstaande knop, volg de instructies en geniet van je eigen cantusnummer.
                 </p>
             </div>
-            <div className="welcome-hero" style={{ display: currentWidth < 1201 ? 'none' : 'flex' }}>
+            <div className="welcome-hero">
             <picture>
                 <div className="hero-image">
                         <img src={Hero} />
