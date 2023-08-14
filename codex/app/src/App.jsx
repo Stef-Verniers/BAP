@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-// import { HashLink as Link } from 'react-router-hash-link'
+import './assets/styles/reset.css'
 import Welcome from './components/views/welcome/Welcome'
 import Sidebar from './components/sidebar/Sidebar'
 import Generator from './components/views/generator/Generator'

@@ -1,10 +1,10 @@
 /* Mobile View */
 
 .welcome {
-    margin: 3vh auto 0 auto;
     width: 90%;
     height: 100%;
-    position: relative;
+    margin: auto;
+    padding-top: 5vh;
 }
 
 .welcome-text > h1 {
@@ -40,40 +40,14 @@
     width: 95%;
     position: absolute;
     bottom: 0;
+    padding-bottom: 5vh;
+
 }
 
 .nav-button > a > button {
     width: 100% !important;
 }
 
-
-@media screen and (min-width: 481px) {
-
-    .welcome-text {
-        width: 80%;
-        height: 80vh;
-        margin: 5vh 5vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding-top: 10vh;
-    }
-
-    .welcome-text > h1 {
-        margin: 0;
-        height: 5vh;
-    }
-
-    .welcome-text > p {
-        font-size: 24px;
-        line-height: calc(24px * 1.5);
-    }
-
-    p {
-        width: 100%;
-    }
-  
-  }
   
   @media screen and (min-width: 769px) {
 
@@ -108,6 +82,10 @@
     .welcome-hero {
         width: 70%;
         margin: 0;
+    }
+
+    .nav-button {
+        display: none;
     }
     
   }
