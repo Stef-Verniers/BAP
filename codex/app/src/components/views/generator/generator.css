@@ -214,7 +214,44 @@ button:disabled {
     cursor: pointer;
 }
 
+.mobile-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3vh;
+}
+
+.mobile-icon > h1 {
+    display: inline;
+}
+
+.home-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.home-icon > a {
+    width: 100%;
+    line-height: 1.5;
+    display: inline;
+    vertical-align: baseline;
+}
+
+.home-icon > a > img {
+    margin-top: 3px;
+}
+
 @media screen and (min-width: 769px) {
+
+    .home-icon {
+        display: none;
+    }
+
     .generator {
         width: 100%;
         height: auto;

@@ -1,7 +1,9 @@
 import './generator.css'
 import arrow from '../../../assets/images/arrow.svg'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ThreeDots } from 'react-loader-spinner'
+import home from '../../../assets/images/home.svg'
 
 const Generator = () => {
 
@@ -164,9 +166,17 @@ const Generator = () => {
     return (
         <>
             <div className='generator' id='generator'>
+
                 <div className="generator-content">
                     <section className='generator-info'>
-                        <h1>Generator</h1>
+                        <div className='mobile-icon'>
+                            <h1>Generator</h1>
+                            <div className='home-icon'>
+                                <Link to={'/'}>
+                                    <img src={home} />
+                                </Link>
+                            </div>
+                        </div>
                         <p>Heb je altijd al eens een idee gehad voor een eigen cantusnummer te schrijven terwijl je niks weet van songwriting?
                         <br/>
                             Dan kan deze generator daar jou zeker bij helpen!
