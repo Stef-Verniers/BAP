@@ -37,10 +37,11 @@
 }
 
 .nav-button {
-    width: 95%;
+    width: 90%;
     position: absolute;
     bottom: 0;
     padding-bottom: 5vh;
+    margin-bottom: 5vh;
 
 }
 
