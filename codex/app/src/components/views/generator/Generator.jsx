@@ -152,6 +152,7 @@ const Generator = () => {
             return <div className="answer">{convertText(answer)}</div>
         }        
         return <div className='loader'>
+                    <p>Een ogenblik geduld alstublieft</p>
                     <ThreeDots 
                     height="80" 
                     width="80" 
