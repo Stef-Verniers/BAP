@@ -5,7 +5,6 @@ import { ThreeDots } from 'react-loader-spinner'
 
 const Generator = () => {
 
-    const [isLoading, setLoading] = useState(true);
     const [value, setValue] = useState('')
     const [currentTitle, setCurrentTitle] = useState('')
     const [message, setMessage] = useState('')
@@ -39,7 +38,6 @@ const Generator = () => {
             const data = JSON.parse(dataString);
             setCollection(data)
         }
-        setLoading(false);
       };
     
       useEffect(() => {
@@ -78,8 +76,6 @@ const Generator = () => {
             }
         }
 
-        console.log(options)
-
         try {
             setPreview(taal)
             const response =  await fetch(`${import.meta.env.VITE_API_URL}/completions`, options)
@@ -95,7 +91,7 @@ const Generator = () => {
     useEffect(() => {
         let isCancelled = false
         if (currentTitle && message) {
-            if (collection.length === 10) {
+            if (collection.length === 9) {
                 setCollection(collection.slice(1))
             }
             setCollection(prevCollection => [
@@ -116,7 +112,6 @@ const Generator = () => {
     }, [message, currentTitle, currentSet]);
 
     useEffect(() => {
-        console.log(collection)
         if (collection) {
             localStorage.setItem('collection', JSON.stringify(collection));
         }
@@ -165,8 +160,6 @@ const Generator = () => {
                     />
                 </div>
     }
-
-    console.log(currentSet.content);
     
     return (
         <>
