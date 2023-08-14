@@ -41,6 +41,10 @@ h1 {
   line-height: 1.1;
 }
 
+input, select {
+  height: 50px;
+}
+
 .button-1 {
   border-radius: 8px;
   border: 1px solid transparent;
