@@ -5,12 +5,23 @@ import { ThreeDots } from 'react-loader-spinner'
 
 const Generator = () => {
 
-    const [value, setValue] = useState("")
-    const [message, setMessage] = useState("")
+    const [isLoading, setLoading] = useState(true);
+    const [value, setValue] = useState('')
+    const [currentTitle, setCurrentTitle] = useState('')
+    const [message, setMessage] = useState('')
     const [request, setRequest] = useState('')
     const [answer, setAnswer] = useState('')
     const [taal, setTaal] = useState('')
     const [preview, setPreview] = useState('');
+    const [toggled, setToggled] = useState(false)
+    const [currentSet, setCurrentSet] = useState({})
+    const [collection, setCollection] = useState(() => {
+        const dataString = localStorage.getItem('collection');
+        if (dataString) {
+            return JSON.parse(dataString);
+        }
+        return [];
+    });
 
     const talen = [
         'Vlaams',
@@ -19,19 +30,37 @@ const Generator = () => {
         'Duits',
         'Zuid-Afrikaans',
         'Spaans',
-        'Italiaans',
         'Latijns'
     ]
 
-    const [toggled, setToggled] = useState(false)
+    const getHistoryItems = () => {
+        const dataString = localStorage.getItem('collection');
+        if (dataString) {
+            const data = JSON.parse(dataString);
+            setCollection(data)
+        }
+        setLoading(false);
+      };
+    
+      useEffect(() => {
+        getHistoryItems();
+      }, []); 
+
 
     // Request voor de API
     const getMessages = async (e) => {
         e.preventDefault()
-        setRequest(value, taal)
-        if (message) {
-            setMessage("")
+        if(message) {
+            setMessage('')
+            setCurrentTitle('')
+            setValue('')
         }
+        setRequest(value, taal)
+        if (!currentTitle && value) {
+            setCurrentSet({})
+            setCurrentTitle(value);
+        }
+
         const options = {
             method: "POST",
             body: JSON.stringify(
@@ -49,17 +78,60 @@ const Generator = () => {
             }
         }
 
+        console.log(options)
+
         try {
             setPreview(taal)
             const response =  await fetch(`${import.meta.env.VITE_API_URL}/completions`, options)
             const data = await response.json()
             setMessage(data.choices[0].message)
             setAnswer(data.choices[0].message.content)
-            setValue('')
         } catch (error) {
             console.error(error)
         }
     }
+
+    // De useEffect pusht de prompts in een inventaris zodat de gebruiker snel zijn/haar eerdere resultaten wil bekijken
+    useEffect(() => {
+        let isCancelled = false
+        if (currentTitle && message) {
+            if (collection.length === 10) {
+                setCollection(collection.slice(1))
+            }
+            setCollection(prevCollection => [
+                ...prevCollection,
+                {
+                    title: currentTitle,
+                    content: message.content,
+                    role: 'user',
+                    language: taal
+                },
+            ]);
+            setCurrentTitle('')
+            setTaal('')
+        }
+        return () => {
+            isCancelled = true;
+        };
+    }, [message, currentTitle, currentSet]);
+
+    useEffect(() => {
+        console.log(collection)
+        if (collection) {
+            localStorage.setItem('collection', JSON.stringify(collection));
+        }
+    }, [collection])
+
+    const selectHistory = (item) => {
+        const result = collection.find(song => song.title === item);
+        if (result) {
+          setCurrentSet({
+            title: result.title,
+            content: result.content,
+            language: result.language
+          });
+        }
+      };
 
     // functie om tabs toe te voegen zodat het niet 1 lange tekst wordt.
     function convertText(input) {
@@ -74,7 +146,6 @@ const Generator = () => {
     function toggleList() {
         setToggled(!toggled)
     }
-
 
     function waitingForAnswer() {
         if (message) {
@@ -93,8 +164,9 @@ const Generator = () => {
                     />
                 </div>
     }
-    
 
+    console.log(currentSet.content);
+    
     return (
         <>
             <div className='generator' id='generator'>
@@ -132,14 +204,27 @@ const Generator = () => {
                             <img className={`${toggled ? 'shown' : 'closed'}`} src={arrow} onClick={toggleList} />
                         </div>
                         <ul className={`list-container ${toggled ? '' : 'hidden'} `}>
-                            <li>test</li>
+                            { collection?.map((item, index) => (
+                                <li className='hover' key={index} onClick={() => selectHistory(item.title)}>{` ${item.title} ( ${item.language} )  `}</li>
+                            ))}
                         </ul>
                     </section>
-                    <section className='generator-answer' id='answer' style={{ display: request ? 'block' : 'none' }}>
-                        <div className="request">
-                            <strong><p>{`${request} (${preview})`}</p></strong>
-                        </div>
-                        { waitingForAnswer() }
+                    <section className='generator-answer' id='answer' style={{ display: request || Object.keys(currentSet).length > 0 ? 'block' : 'none' }}>
+                        { Object.keys(currentSet).length > 0 ? (
+                            <>
+                                <div className="request">
+                                    <strong><p>{`${currentSet.title} (${currentSet.language})`}</p></strong>
+                                </div>
+                                <div className="answer">{convertText(currentSet.content)}</div>
+                            </>
+                        ) : 
+                        <>
+                            <div className="request">
+                                <strong><p>{`${request} (${preview})`}</p></strong>
+                            </div>
+                            { waitingForAnswer() }
+                        </>
+                        }
                     </section>
                 </div>
             </div>

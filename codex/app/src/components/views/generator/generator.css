@@ -188,6 +188,10 @@ button:disabled {
     opacity: 1;
 }
 
+.hover {
+    cursor: pointer;
+}
+
 @media screen and (min-width: 769px) {
     .generator {
         width: 65vw;
