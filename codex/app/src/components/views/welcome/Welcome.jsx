@@ -30,11 +30,6 @@ const Welcome = () => {
                     Als je op zoek bent naar een persoonlijke touch, geef dan een input aan onze slimme AI en laat hem een gloednieuw cantusnummer voor je genereren. Voer een paar woorden in die je wilt dat in het nummer worden opgenomen, en onze AI zal een meeslepend lied creëren dat perfect past bij de sfeer van een cantus.
                 </p>
             </div>
-            <div className='nav-button'>
-                <Link to={'/generator'}>
-                    <button className='button-1'>Genereer je liedje</button>
-                </Link>
-            </div>
             <div className="welcome-hero" style={{ display: currentWidth < 1201 ? 'none' : 'flex' }}>
             <picture>
                 <div className="hero-image">
@@ -43,6 +38,11 @@ const Welcome = () => {
             </picture>
             </div>
         </section>
+        <div className='nav-button'>
+                <Link to={'/generator'}>
+                    <button className='button-1'>Genereer je liedje</button>
+                </Link>
+            </div>
         </>
     )
 }
