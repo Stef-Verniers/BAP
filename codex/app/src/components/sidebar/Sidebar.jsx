@@ -15,13 +15,10 @@ const Sidebar = () => {
 
     return(
         <>
-        <ul className={isActive ? 'nav open' : 'nav'}>
-            <li><Link to='/' className={location.hash === '#welcome' ? 'active' : ''}>Home</Link></li>
-            <li><Link to='/generator' className={location.hash === '#generator' ? 'active' : ''}>Generator</Link></li>
-        </ul>
-        <div className="trigger" id="trigger" onClick={toggleNav}>
-            <div className={ isActive ? "circle filled" : "circle"} id="circle"></div>
-        </div>
+            <ul className={isActive ? 'nav open' : 'nav'}>
+                <li><Link to='/' className={location.pathname === '/' ? 'active' : ''}>Home</Link></li>
+                <li><Link to='/generator' className={location.pathname === '/generator' ? 'active' : ''}>Generator</Link></li>
+            </ul>
         </>
     )
 }
