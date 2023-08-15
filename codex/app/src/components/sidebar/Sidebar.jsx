@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
 
+    // Sidebar for navigation
+
     const [isActive, setIsActive] = useState(false);
     const location = useLocation();
 

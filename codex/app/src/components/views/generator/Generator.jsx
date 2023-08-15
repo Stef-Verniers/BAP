@@ -7,6 +7,8 @@ import home from '../../../assets/images/home.svg'
 
 const Generator = () => {
 
+
+    // All our useStates
     const [value, setValue] = useState('')
     const [error, setError] = useState('')
     const [currentTitle, setCurrentTitle] = useState('')
@@ -25,6 +27,7 @@ const Generator = () => {
         return [];
     });
 
+    // Array of languages we can use
     const talen = [
         'Vlaams',
         'Frans',
@@ -35,6 +38,7 @@ const Generator = () => {
         'Latijns'
     ]
 
+    // We retrieve local storage data if there is any and add it to our collection array
     const getHistoryItems = () => {
         const dataString = localStorage.getItem('collection');
         if (dataString) {
@@ -43,12 +47,14 @@ const Generator = () => {
         }
       };
     
-      useEffect(() => {
+
+    // A useEffect that listens to our data fetching from the local storage
+    useEffect(() => {
         getHistoryItems();
-      }, []); 
+    }, []); 
 
 
-    // Request voor de API
+    // API Request
     const getMessages = async (e) => {
         e.preventDefault()
         if(message) {
@@ -91,7 +97,7 @@ const Generator = () => {
         }
     }
 
-    // De useEffect pusht de prompts in een inventaris zodat de gebruiker snel zijn/haar eerdere resultaten wil bekijken
+    // The useEffect pushes prompts inside an array so a user can retrieve their 9 last prompts
     useEffect(() => {
         let isCancelled = false
         if (currentTitle && message) {
@@ -115,12 +121,14 @@ const Generator = () => {
         };
     }, [message, currentTitle, currentSet]);
 
+    // This adds items to our local storage when a new item is added to our collection array
     useEffect(() => {
         if (collection) {
             localStorage.setItem('collection', JSON.stringify(collection));
         }
     }, [collection])
 
+    // This function selects the clicked prompt and retrieve the data to show it on the frontend
     const selectHistory = (item) => {
         const result = collection.find(song => song.title === item);
         if (result) {
@@ -132,7 +140,7 @@ const Generator = () => {
         }
       };
 
-    // functie om tabs toe te voegen zodat het niet 1 lange tekst wordt.
+    // Slices the text into shorter sentences
     function convertText(input) {
         const sections = input.split(/\(([^)]+)\)/).filter(Boolean);
         return (
@@ -142,10 +150,12 @@ const Generator = () => {
         );
     }
 
+    // Toggle function
     function toggleList() {
         setToggled(!toggled)
     }
 
+    // When a request is made, we show a loading animation. When the data is fetched, we show the data
     function waitingForAnswer() {
         if (message) {
             return <div className="answer">{convertText(answer)}</div>
