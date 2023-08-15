@@ -41,10 +41,6 @@ h1 {
   line-height: 1.1;
 }
 
-input, select {
-  height: 50px;
-}
-
 .button-1 {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -56,6 +52,7 @@ input, select {
   color: white;
   cursor: pointer;
   transition: border-color 0.25s;
+  height: 50px;
 }
 .button-1:hover {
   border-color: #646cff;
