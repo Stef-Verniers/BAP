@@ -246,6 +246,11 @@ button:disabled {
     margin-top: 3px;
 }
 
+.error {
+    background-color: rgb(126, 0, 0);
+    color: white
+}
+
 @media screen and (min-width: 769px) {
 
     .home-icon {

@@ -8,6 +8,7 @@ import home from '../../../assets/images/home.svg'
 const Generator = () => {
 
     const [value, setValue] = useState('')
+    const [error, setError] = useState('')
     const [currentTitle, setCurrentTitle] = useState('')
     const [message, setMessage] = useState('')
     const [request, setRequest] = useState('')
@@ -86,6 +87,7 @@ const Generator = () => {
             setAnswer(data.choices[0].message.content)
         } catch (error) {
             console.error(error)
+            setError(error)
         }
     }
 
@@ -214,6 +216,14 @@ const Generator = () => {
                         </ul>
                     </section>
                     <section className='generator-answer' id='answer' style={{ display: request || Object.keys(currentSet).length > 0 ? 'block' : 'none' }}>
+                        { error ? (
+                             <>
+                                <div className="request error">
+                                    <strong><p></p></strong>
+                                </div>
+                                <div className="answer">{error}</div>
+                            </>
+                        ) : ''}
                         { Object.keys(currentSet).length > 0 ? (
                             <>
                                 <div className="request">
@@ -230,6 +240,7 @@ const Generator = () => {
                         </>
                         }
                     </section>
+                    
                 </div>
             </div>
         </>
