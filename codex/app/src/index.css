@@ -119,6 +119,10 @@ button:focus-visible {
     width: 100%;
   }
 
+  .button-1 {
+    height: 40px;
+  }
+
   
 }
 
