@@ -23,7 +23,7 @@ const Welcome = () => {
                     Welkom bij de online cantusgenerator.
                     <br/>
                     <br/>
-                    Met behulp van AI kan jij nu zelf je eigen cantusliedjes aanmaken. Druk op onderstaande knop, volg de instructies en geniet van je eigen cantusnummer.
+                    Met behulp van AI kan jij nu zelf je eigen cantusliedjes aanmaken. Je hoeft enkel naar de generator te navigeren, de instructie te lezen en wij doen de rest.
                 </p>
             </div>
             <div className="welcome-hero">
