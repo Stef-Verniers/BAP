@@ -3,6 +3,7 @@ import './assets/styles/reset.css'
 import Welcome from './components/views/welcome/Welcome'
 import Sidebar from './components/sidebar/Sidebar'
 import Generator from './components/views/generator/Generator'
+import Footer from './components/footer/Footer'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path={'/generator'} element={<Generator />} />
         </Routes>
       </main>
+      <Footer />
     </>
   )
 }

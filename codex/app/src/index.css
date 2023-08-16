@@ -113,6 +113,7 @@ button:focus-visible {
     display: grid;
     grid-template-columns: 20% 80%;
     position: relative;
+  
   }
 
   main {
