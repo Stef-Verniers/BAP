@@ -73,7 +73,6 @@ const Generator = () => {
             body: JSON.stringify(
                 {
                     message: `Kan je mij een ${taal} cantusnummer genereren over ${value}
-                    met rijmschema AABB
                     met respect voor de context
                     zonder bevestiging of opmerkingen
                     zonder het vermelden van het begrip cantus of rijmschema AABB
